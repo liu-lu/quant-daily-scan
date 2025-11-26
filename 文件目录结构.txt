@@ -1,0 +1,8 @@
+quant_daily_scan/
+├── config.yaml            # “控制台”：定义 Ticker 和资产类型
+├── main.py                # 启动脚本：一键运行
+└── lib/                   # 核心库文件夹
+    ├── __init__.py
+    ├── data_loader.py     # 负责连接 Bloomberg API
+    ├── analytics.py       # 负责金融计算逻辑
+    └── reporter.py        # 负责生成 Markdown/Notion 格式

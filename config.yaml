@@ -1,0 +1,51 @@
+# ==========================================
+# 每日盯盘核心资产池配置
+# ==========================================
+# Type 定义:
+#   - YIELD:  计算 Basis Point (bp) 变动 (用于 Govt Bonds, Rates)
+#   - SPREAD: 计算 Basis Point (bp) 变动 (用于 OAS, Credit Spreads)
+#   - PRICE:  计算 Percentage (%) 变动 (用于 FX, Equity, Gold)
+# ==========================================
+
+portfolio:
+  - category: "1. Global Anchors (Rates)"
+    assets:
+      - ticker: "USGG10YR Index"
+        name: "US 10Y"
+        type: "YIELD"
+      - ticker: "GTDEM10Y Govt"
+        name: "Bund 10Y"
+        type: "YIELD"
+      - ticker: "CGB10Y Index"
+        name: "China 10Y"
+        type: "YIELD"
+
+  - category: "2. Credit Beta & MBS"
+    assets:
+      - ticker: "LUMSTRUU Index"
+        name: "US MBS Idx"
+        type: "PRICE"  # 或者用 OAS ticker 设为 SPREAD
+      - ticker: "LUACTRUU Index"
+        name: "US IG Corp"
+        type: "PRICE"
+      - ticker: "LF98TRUU Index"
+        name: "US HY Corp"
+        type: "PRICE"
+
+  - category: "3. FX & Macro Hedges"
+    assets:
+      - ticker: "USDCNH Curncy"
+        name: "USD/CNH"
+        type: "PRICE"
+      - ticker: "EURUSD Curncy"
+        name: "EUR/USD"
+        type: "PRICE"
+      - ticker: "XAU Curncy"
+        name: "Gold"
+        type: "PRICE"
+
+  - category: "4. Volatility & Risk"
+    assets:
+      - ticker: "MOVE Index"
+        name: "MOVE Index"
+        type: "PRICE"
